@@ -14,7 +14,7 @@ The goal is to develop a robust segmentation pipeline capable of **accurately lo
 
 ---
 
-## Demo & Visual Results
+## Visual Results
 
 ### Qualitative Results (Defect → Ground Truth → Prediction)
 
@@ -49,7 +49,6 @@ Carbon-fibre composites are widely used in high-performance industries, but defe
 - gaps  
 - broken tows  
 - distortions  
-- foreign objects  
 
 can compromise structural integrity.
 
@@ -66,6 +65,8 @@ Compared to classification, segmentation provides:
 ## Industrial Context
 
 The data is acquired using the **F-SCAN sensor**, which captures multiple reflectance modalities.
+![fscan](https://github.com/user-attachments/assets/3d9a0951-e678-45c3-bfe7-08be410069f1)
+
 
 Each sample includes:
 - raw image stack (multi-illumination)
