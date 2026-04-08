@@ -1,4 +1,4 @@
-# Deep Learning Pipeline for Carbon-Fibre Defect Segmentation
+# SegFormer-Based Carbon Fibre Defect Segmentation
 
 ## Overview
 
@@ -10,7 +10,7 @@ Unlike standard computer vision tasks, this problem involves:
 - **limited and noisy industrial datasets**
 - **highly structured, orientation-dependent textures**
 
-The goal is to develop a robust segmentation pipeline capable of **accurately localizing defects at pixel level**, enabling downstream quality inspection.
+The goal is to develop a robust segmentation pipeline capable of **accurately localizing defects at pixel level**, supporting automated quality inspection workflows.
 
 ---
 
@@ -55,7 +55,7 @@ can compromise structural integrity.
 The task is **semantic segmentation**:
 - assign a binary label (defect/background) to each pixel
 
-Compared to classification, segmentation provides:
+Compared to classification, segmentation enables:
 - precise defect localization  
 - geometric information  
 - support for automated inspection pipelines  
@@ -125,8 +125,7 @@ Different views of the same defect are grouped and kept in the same split to avo
 ---
 
 ## Input Representation
-
-A central contribution of this work is the design of an input pipeline for multi-channel sensor data.
+A key contribution of this work is the design of an input pipeline for multi-channel sensor data.
 
 ### Channel selection
 
@@ -202,6 +201,22 @@ Designed for imbalance:
 
 ---
 
+## Results
+
+The best performing configuration (SegFormer + CutMix) achieved:
+
+- **Hard IoU: 0.6573**
+- **Standard deviation: 0.0747** (across multiple seeds)
+
+Evaluation was performed using **group-aware splits** and **multi-seed validation** to ensure robustness and avoid leakage.
+
+These results highlight the importance of:
+- proper dataset curation  
+- physically meaningful input representations  
+- tailored training strategies for imbalanced industrial data
+
+---
+
 ## Alternatives Explored
 
 ### Anomaly detection (PatchCore)
@@ -255,11 +270,16 @@ Conclusion:
 
 ## Environment
 
-This project depends on proprietary data and acquisition systems (F-SCAN).
+This project depends on proprietary data and acquisition systems (F-SCAN) and **cannot be executed as-is**.
 
-The pipeline is reproducible, but full replication requires:
-- access to industrial dataset  
-- multi-channel sensor data  
+The full pipeline includes:
+- custom dataset generation  
+- split creation based on defect grouping  
+- specific filename conventions for sample identification  
+
+These components are tightly coupled with the industrial dataset and are therefore not included.
+
+However, the core training pipeline and methodology are fully described and can be adapted to similar multi-channel segmentation tasks.
 
 ---
 
