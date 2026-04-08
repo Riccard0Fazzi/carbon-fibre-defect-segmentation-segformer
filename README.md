@@ -64,9 +64,8 @@ Compared to classification, segmentation provides:
 
 ## Industrial Context
 
-The data is acquired using the **F-SCAN sensor**, which captures multiple reflectance modalities.
-![fscan](https://github.com/user-attachments/assets/3d9a0951-e678-45c3-bfe7-08be410069f1)
-
+The data is acquired using the **[F-SCAN sensor](https://www.profactor.at/loesungen/industrielle-inspektion/oberflaecheninspektion-von-faserverbundbauteilen/faserwinkelmessung_bei_carbon_und_glasfasern/)**, which captures multiple reflectance modalities.
+<img src="assets/fscan.png" width="40%">
 
 Each sample includes:
 - raw image stack (multi-illumination)
