@@ -36,9 +36,9 @@ The goal is to develop a robust segmentation pipeline capable of **accurately lo
   <img src="assets/sample_3_pred.png" width="30%">
 </p>
 
-> Left: input (fibular / multi-channel visualization)  
-> Center: ground truth mask  
-> Right: model prediction  
+- Left: input (fibular visualization)  
+- Center: ground truth mask  
+- Right: model prediction  
 
 ---
 
@@ -53,7 +53,7 @@ Carbon-fibre composites are widely used in high-performance industries, but defe
 can compromise structural integrity.
 
 The task is **semantic segmentation**:
-> assign a binary label (defect/background) to each pixel
+- assign a binary label (defect/background) to each pixel
 
 Compared to classification, segmentation provides:
 - precise defect localization  
@@ -120,7 +120,7 @@ Key design choices:
 ### Leakage prevention
 
 Different views of the same defect are grouped and kept in the same split to avoid:
-> artificial performance inflation due to memorization
+- artificial performance inflation due to memorization
 
 ---
 
@@ -200,9 +200,6 @@ Designed for imbalance:
 ### Loss function comparison
 - effect on recall vs precision  
 
-### Comparison with YOLO segmentation
-- transformer-based models achieved more stable results  
-
 ---
 
 ## Alternatives Explored
@@ -243,7 +240,6 @@ Conclusion:
 - multi-class defect segmentation  
 - domain adaptation techniques  
 - integration in real-time inspection pipelines  
-- active learning for annotation efficiency  
 
 ---
 
