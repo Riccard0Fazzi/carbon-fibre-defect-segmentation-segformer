@@ -562,8 +562,8 @@ def build_input_stack_from_fscan(
                 img_scaled = img.astype(np.float32)
 
 
-        # 4) For model input: in your current design you want the same as vis,
-        #    then optionally ImageNet normalize at the end (only for 3ch)
+        # 4) For model input
+        # optionally ImageNet normalize at the end (only for 3ch)
         chans_final.append(img_scaled.astype(np.float32))
 
     x_vis = np.stack(chans_vis, axis=0).astype(np.float32)     # [C,H,W]
@@ -723,7 +723,7 @@ def aggregate_val_metrics_best(out_root: Path, seed_dirs: List[Path], num_classe
     Aggregates:
       - global hard IoU (metrics['global']['iou'])
       - global soft IoU (metrics['global']['soft_iou'])
-      - plus any other global scalar metrics you want
+      - plus any other global scalar metrics 
       - per-class metrics aggregated across seeds (skipping None / missing)
     """
     per_seed = []
@@ -1373,7 +1373,6 @@ def evaluate_split(
     max_vis: int = 200,
 ) -> Dict[str, object]:
     """
-    Same as your evaluate_split BUT fixes per-class confusion to be one-vs-rest:
       positives = gt_k
       negatives = ~gt_k  (background + other defects)
     """
