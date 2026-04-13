@@ -136,7 +136,6 @@ Instead of RGB:
 
 Handled circular nature of angles:
 - mapping from [-π, π] → [0,1]
-- orientation-based (mod π) normalization to avoid discontinuities  
 
 ### Per-sample normalization
 
